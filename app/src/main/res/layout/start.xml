@@ -2,12 +2,10 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
-        android:maxLength="7"
         android:id="@+id/editText1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -15,20 +13,19 @@
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         android:ems="10"
         android:hint="Player 1 Name"
-
+        android:inputType="textCapSentences|textPersonName|textFilter"
+        android:maxLength="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267"
-        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        android:inputType="textCapSentences|textPersonName|textFilter"/>
+        app:layout_constraintVertical_bias="0.267" />
 
     <EditText
-        android:maxLength="7"
         android:id="@+id/editText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -36,26 +33,27 @@
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         android:ems="10"
         android:hint="Player 2 Name"
+        android:inputType="textCapSentences|textPersonName|textFilter"
+        android:maxLength="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText1"
         app:layout_constraintVertical_bias="0.098"
-        android:inputType="textCapSentences|textPersonName|textFilter"
-        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         />
 
     <Button
-        android:onClick="start"
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
+        android:onClick="start"
         android:text="Start the Game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

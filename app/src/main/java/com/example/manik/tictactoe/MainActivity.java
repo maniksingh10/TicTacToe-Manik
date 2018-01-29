@@ -21,8 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     //This creates a intent for the game activity (PlayScreen.java)
     public void start(View v) {
+
+
         EditText ed1 = findViewById(R.id.editText1);
+        if (ed1.getText().toString().isEmpty()) {
+            ed1.setText(R.string.player1);
+        }
         EditText ed2 = findViewById(R.id.editText2);
+        if (ed2.getText().toString().isEmpty()) {
+            ed2.setText(R.string.player2);
+        }
         String p1 = ed1.getText().toString();
         String p2 = ed2.getText().toString();
 

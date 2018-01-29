@@ -80,6 +80,7 @@ public class PlayScreen extends MainActivity {
                 break;
         }
         Play(cellID, bunSelected);
+        bunSelected.setClickable(false);
     }
 
     //    alternates the turn from player1 to player2 and vice versa
@@ -96,12 +97,13 @@ public class PlayScreen extends MainActivity {
             ActivePlayer = 1;
         }
         bunSelected.setEnabled(false);
-        CheckWinner();
+        CheckWinner(bunSelected);
     }
 
 
+
     //checks the winner and displays the winner
-    void CheckWinner() {
+    void CheckWinner(Button bunSelect) {
         int winner = -1;
 
         if (Player1.contains(1) && Player1.contains(2) && Player1.contains(3)) {
@@ -164,23 +166,18 @@ public class PlayScreen extends MainActivity {
         String p1 = b.getString("p1");
         String p2 = b.getString("p2");
 
-        if (winner != -1) {
-            if (winner == 1) {
-                Toast.makeText(this, p1 + " Won!!!", Toast.LENGTH_SHORT).show();
-
-            }
-            if (winner == 2) {
-                Toast.makeText(this, p2 + " Won!!!", Toast.LENGTH_SHORT).show();
-            }
+        if (winner == 2) {
+            Toast.makeText(this, p2 + " Won!!!", Toast.LENGTH_SHORT).show();
+        } else if (winner == 1) {
+            Toast.makeText(this, p1 + " Won!!!", Toast.LENGTH_SHORT).show();
+            bunSelect.setClickable(false);
         }
     }
 
 
     //resets the game
     public void reset(View view) {
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
+        recreate();
     }
 
 
