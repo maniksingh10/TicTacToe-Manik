@@ -166,12 +166,7 @@ public class PlayScreen extends MainActivity {
         String p1 = b.getString("p1");
         String p2 = b.getString("p2");
 
-        if (winner == 2) {
-            Toast.makeText(this, p2 + " Won!!!", Toast.LENGTH_SHORT).show();
-        } else if (winner == 1) {
-            Toast.makeText(this, p1 + " Won!!!", Toast.LENGTH_SHORT).show();
-            bunSelect.setClickable(false);
-        }
+       
     }
 
 
