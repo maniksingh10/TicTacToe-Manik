@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:elevation="15dp"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/blank"
+                android:onClick="bunClick" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/Reset"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="reset"
+        android:text="Restart"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+
+        android:id="@+id/tvp1"
+        style="@android:style/Widget.Holo.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Manik" />
+
+    <TextView
+        android:id="@+id/tvp2"
+        style="@android:style/Widget.Holo.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="44dp"
+        android:textAlignment="textEnd"
+        android:textAllCaps="true"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Aaru" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvp2"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/tvp1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vs" />
+
+</android.support.constraint.ConstraintLayout>
