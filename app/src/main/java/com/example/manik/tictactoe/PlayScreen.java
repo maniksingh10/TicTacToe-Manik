@@ -3,10 +3,8 @@ package com.example.manik.tictactoe;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,25 +18,26 @@ public class PlayScreen extends MainActivity {
 
     TextView tvp1;
     TextView tvp2;
+    //    creates a Array list to store the cellid
+    int ActivePlayer = 1;
+    ArrayList<Integer> Player1 = new ArrayList<>();
+    ArrayList<Integer> Player2 = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bundle b= getIntent().getExtras();
+        Bundle b = getIntent().getExtras();
         String p1 = b.getString("p1");
         String p2 = b.getString("p2");
-
         tvp1 = findViewById(R.id.tvp1);
         tvp1.setText(p1);
         tvp2 = findViewById(R.id.tvp2);
         tvp2.setText(p2);
     }
 
-
-
-
-
+    //tells which button is clicked and assign cellId
     public void bunClick(View view) {
         Button bunSelected = (Button) view;
         int cellID = 0;
@@ -83,10 +82,7 @@ public class PlayScreen extends MainActivity {
         Play(cellID, bunSelected);
     }
 
-    int ActivePlayer = 1;
-    ArrayList<Integer> Player1 = new ArrayList<>();
-    ArrayList<Integer> Player2 = new ArrayList<>();
-
+    //    alternates the turn from player1 to player2 and vice versa
     void Play(int cellID, Button bunSelected) {
 
         if (ActivePlayer == 1) {
@@ -104,6 +100,7 @@ public class PlayScreen extends MainActivity {
     }
 
 
+    //checks the winner and displays the winner
     void CheckWinner() {
         int winner = -1;
 
@@ -179,13 +176,16 @@ public class PlayScreen extends MainActivity {
     }
 
 
+    //resets the game
     public void reset(View view) {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
     }
 
-    public void onBackPressed(){
+
+    //exits the screen to MainActivity.java for new players name
+    public void onBackPressed() {
         Intent intent = new Intent(PlayScreen.this, MainActivity.class);
         finish();
         startActivity(intent);
