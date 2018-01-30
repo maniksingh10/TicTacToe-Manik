@@ -22,6 +22,7 @@ public class PlayScreen extends MainActivity {
     int ActivePlayer = 1;
     ArrayList<Integer> Player1 = new ArrayList<>();
     ArrayList<Integer> Player2 = new ArrayList<>();
+    int winner = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,48 +40,49 @@ public class PlayScreen extends MainActivity {
 
     //tells which button is clicked and assign cellId
     public void bunClick(View view) {
-        Button bunSelected = (Button) view;
-        int cellID = 0;
-        switch ((bunSelected.getId())) {
+        if (winner == -1) {
+            Button bunSelected = (Button) view;
+            int cellID = 0;
+            switch ((bunSelected.getId())) {
 
-            case R.id.button:
-                cellID = 1;
-                break;
+                case R.id.button:
+                    cellID = 1;
+                    break;
 
-            case R.id.button2:
-                cellID = 2;
-                break;
+                case R.id.button2:
+                    cellID = 2;
+                    break;
 
-            case R.id.button3:
-                cellID = 3;
-                break;
+                case R.id.button3:
+                    cellID = 3;
+                    break;
 
-            case R.id.button4:
-                cellID = 4;
-                break;
+                case R.id.button4:
+                    cellID = 4;
+                    break;
 
-            case R.id.button5:
-                cellID = 5;
-                break;
+                case R.id.button5:
+                    cellID = 5;
+                    break;
 
-            case R.id.button6:
-                cellID = 6;
-                break;
+                case R.id.button6:
+                    cellID = 6;
+                    break;
 
-            case R.id.button7:
-                cellID = 7;
-                break;
+                case R.id.button7:
+                    cellID = 7;
+                    break;
 
-            case R.id.button8:
-                cellID = 8;
-                break;
+                case R.id.button8:
+                    cellID = 8;
+                    break;
 
-            case R.id.button9:
-                cellID = 9;
-                break;
+                case R.id.button9:
+                    cellID = 9;
+                    break;
+            }
+            Play(cellID, bunSelected);
         }
-        Play(cellID, bunSelected);
-        bunSelected.setClickable(false);
     }
 
     //    alternates the turn from player1 to player2 and vice versa
@@ -100,11 +102,8 @@ public class PlayScreen extends MainActivity {
         CheckWinner(bunSelected);
     }
 
-
-
     //checks the winner and displays the winner
     void CheckWinner(Button bunSelect) {
-        int winner = -1;
 
         if (Player1.contains(1) && Player1.contains(2) && Player1.contains(3)) {
             winner = 1;
